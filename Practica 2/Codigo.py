@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import threading
 from datetime import datetime
 from time import sleep
+
 import spidev
 
 # Definir los pines
@@ -46,6 +47,7 @@ def ReadChannel(channel):
 
 # Voltaje recibido a la temperatura
 def ConvertTemp(data, places):
+
     temp = ((data * 330) / float(1023))
     temp = round(temp, places)
     return temp
